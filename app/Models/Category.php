@@ -14,4 +14,8 @@ class Category extends Model
         'category_nm',
         'category_desc',
     ];
+
+    public function categoryType(){
+        return $this->belongsTo(CategoryType::class);
+    }
 }

@@ -12,4 +12,8 @@ class Banner extends Model
         'store_id',
         'image_path'
     ];
+
+    public function store(){
+        return $this->belongsTo(Store::class);
+    }
 }

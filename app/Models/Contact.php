@@ -13,4 +13,7 @@ class Contact extends Model
         'contact_email',
         'contact_location'
     ];
+    public function store(){
+        return $this->belongsTo(Store::class);
+    }
 }

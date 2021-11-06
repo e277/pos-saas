@@ -16,4 +16,8 @@ class Coupon extends Model
         'status',
         'expire_date'
     ];
+
+    public function usedCoupon(){
+        return $this->hasOne(Coupon::class);
+    }
 }

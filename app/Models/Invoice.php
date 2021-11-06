@@ -14,4 +14,11 @@ class Invoice extends Model
         'project_id',
         'invoice_nbr'
     ];
+
+    public function sales(){
+        return $this->belongsTo(Sales::class);
+    }
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
 }

@@ -12,4 +12,8 @@ class SessionLog extends Model
     protected $fillable = [
         
     ];
+
+    public function user(){
+        return $this->belongsTo(USer::class);
+    }
 }

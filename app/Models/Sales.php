@@ -16,4 +16,14 @@ class Sales extends Model
         't_amount',
         'date'
     ];
+
+    public function salesAssociate(){
+        return $this->belongsTo(SalesAssociate::class);
+    }
+    public function customer(){
+        return $this->belongsTo(Customer::class);
+    }
+    public function invoice(){
+        return $this->hasMany(Invoice::class);
+    }
 }

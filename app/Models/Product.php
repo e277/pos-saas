@@ -22,4 +22,14 @@ class Product extends Model
         'status',
         'desc'
     ];
+
+    public function brand(){
+        return $this->hasMany(Store::class);
+    }
+    public function category(){
+        return $this->hasMany(Category::class);
+    }
+    public function store(){
+        return $this->belongsTo(Store::class);
+    }
 }

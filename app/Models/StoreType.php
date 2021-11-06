@@ -12,4 +12,8 @@ class StoreType extends Model
     protected $fillable = [
         'type'
     ];
+
+    public function store(){
+        return $this->hasMany(Store::class);
+    }
 }

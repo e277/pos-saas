@@ -13,4 +13,8 @@ class Commission extends Model
         'store_id',
         'commission_rate'
     ];
+
+    public function store(){
+        return $this->belongsTo(Store::class);
+    }
 }

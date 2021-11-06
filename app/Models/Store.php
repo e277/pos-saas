@@ -24,4 +24,27 @@ class Store extends Model
         'theme',
         'logo_path'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+    public function contact(){
+        return $this->hasMany(contact::class);
+    }
+    public function product(){
+        return $this->hasMany(product::class);
+    }
+    public function storeType(){
+        return $this->belongsTo(StoreType::class);
+    }
+    public function banner(){
+        return $this->hasMany(Banner::class);
+    }
+    public function commission(){
+        return $this->hasOne(Commission::class);
+    }
+    public function coupon(){
+        return $this->hasMany(Coupon::class);
+    }
+
 }

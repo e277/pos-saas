@@ -12,4 +12,7 @@ class CategoryType extends Model
     protected $fillable = [
         'type'
     ];
+    public function category(){
+        return $this->hasmany(Category::class);
+    }
 }

@@ -13,4 +13,12 @@ class SalesAssociate extends Model
         'user_id',
         'hours'
     ];
+
+    public function sales(){
+        return $this->hasMany(Sales::class);
+    }
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
 }

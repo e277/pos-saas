@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Storefront\Backend\AdminDashboard;
+use App\Http\Livewire\Storefront\Backend\Adminindox;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::group(['prefix' => 'storefront','as' => 'backEnd.'],function (){
 
-require __DIR__.'/auth.php';
+    Route::get('/backend/dashboard', AdminDashboard::class)
+        ->name('index');
+
+    Route::get('/backend/inbox', Adminindox::class)
+        ->name('inbox');
+
+});
