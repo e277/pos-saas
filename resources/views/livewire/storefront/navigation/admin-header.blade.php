@@ -13,23 +13,42 @@
         </button>
 
 
-
     </div>
 
     <div class="flex items-center">
 
-        <div  class="relative">
+        <div>
 
             <a href="{{ route('backEnd.inbox') }}"
-                    class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
+               class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
 
-                <i class="fas fa-inbox text-xl mr-4 "></i>
+                <span class="mr-2"><i class="fab fa-windows text-2xl"></i> POS System </span>
 
             </a>
 
-            <div
-                 class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
+        </div>
 
+        <div class="relative flex">
+
+            <div>
+
+                <a href="{{ route('backEnd.inbox') }}"
+                   class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
+
+                    <span class="mr-4">
+
+                        <i class="fas fa-inbox text-xl  "></i>
+
+                    Inbox
+
+                    </span>
+
+                </a>
+
+            </div>
+
+            <div
+                class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
 
 
         </div>

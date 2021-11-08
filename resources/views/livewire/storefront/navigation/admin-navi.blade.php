@@ -45,6 +45,19 @@
 
             </x-links.merchantNavi>
 
+            <x-links.merchantNavi :href="route('backEnd.createAssociate')"
+                                  :active="request()->routeIs('backEnd.createAssociate')">
+
+                <x-slot name="icon">
+
+                    <i class="far fa-user-hard-hat"></i>
+
+                </x-slot>
+
+                {{ __('New Sale Associate') }}
+
+            </x-links.merchantNavi>
+
             <x-links.merchantNavi>
 
                 <x-slot name="icon">
@@ -86,6 +99,18 @@
             </x-links.merchantNavi>
 
         </x-dropdown>
+
+        <x-links.merchantNavi>
+
+            <x-slot name="icon">
+
+                <i class="far fa-apple-crate"></i>
+
+            </x-slot>
+
+            {{ __('Sale Report') }}
+
+        </x-links.merchantNavi>
 
 
 

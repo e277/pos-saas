@@ -88,79 +88,33 @@
 
         </div>
 
-        <div class="flex flex-col mt-8">
-            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                <div
-                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                    <table class="min-w-full">
-                        <thead>
-                        <tr>
-                            <th
-                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Name
-                            </th>
-                            <th
-                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Title
-                            </th>
-                            <th
-                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Status
-                            </th>
-                            <th
-                                class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Roles
-                            </th>
-                            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                        </tr>
-                        </thead>
+        <x-table>
 
-                        <tbody class="bg-white">
+            <x-slot name="heading">
 
-                        <tr>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <div class="flex items-center">
-                                    <div class="flex-shrink-0 h-10 w-10">
-                                        <img class="h-10 w-10 rounded-full"
-                                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                             alt="">
-                                    </div>
+                <x-table.heading> Store</x-table.heading>
+                <x-table.heading> Product Name</x-table.heading>
+                <x-table.heading> Brand</x-table.heading>
+                <x-table.heading> Category</x-table.heading>
+                <x-table.heading> Quantity</x-table.heading>
+                <x-table.heading> Regular Price</x-table.heading>
+                <x-table.heading> Sale Price</x-table.heading>
 
-                                    <div class="ml-4">
-                                        <div class="text-sm leading-5 font-medium text-gray-900">John Doe
-                                        </div>
-                                        <div class="text-sm leading-5 text-gray-500">john@example.com</div>
-                                    </div>
-                                </div>
-                            </td>
+            </x-slot>
 
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                <div class="text-sm leading-5 text-gray-900">Software Engineer</div>
-                                <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                            </td>
+            <x-table.row class="text-center">
 
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                <span
-                                                    class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                            </td>
+                <x-table.cell> Testing Store</x-table.cell>
+                <x-table.cell > Fan</x-table.cell>
+                <x-table.cell> Gucci</x-table.cell>
+                <x-table.cell> Red label</x-table.cell>
+                <x-table.cell > 20</x-table.cell>
+                <x-table.cell> 2500.00</x-table.cell>
+                <x-table.cell> 1500.00</x-table.cell>
 
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                Owner
-                            </td>
+            </x-table.row>
 
-                            <td
-                                class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                            </td>
-                        </tr>
-
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        </x-table>
 
     </div>
 </main>
