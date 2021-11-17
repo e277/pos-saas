@@ -18,6 +18,7 @@ class CreateStore extends Component
 
     public $upload;
     public $bannerUpload = [];
+    public $bannerStatus = false;
 
     protected array $rules = [
         'store.name' => 'required|max:20',
@@ -25,7 +26,7 @@ class CreateStore extends Component
         'store.theme' => 'required',
         'store.title' => 'required|max:40',
         'upload' => 'required|image',
-//        'bannerUpload' => 'required|image',
+        'bannerUpload' => 'required',
         'store.banner_message' => 'required:max:80',
         'store.mission' => 'required:max:95',
         'store.slogan' => 'required|max:45',
@@ -43,6 +44,8 @@ class CreateStore extends Component
         'store.logo_path.required' => 'store.logo_path is Required',
         'upload.required' => 'Store Logo is Required',
         'bannerUpload.required' => '5 Banner Images Are Required',
+        'bannerUpload.min:5' => 'Must Upload A Minimum Of 5 Images',
+        'bannerUpload.max:5' => 'Must Upload Only A Maximum Of 5 Images',
         'store.banner_message.required' => 'store.banner_message is Required',
         'store.slogan.required' => 'store.slogan is Required',
         'store.mission.required' => 'store.slogan is Required',
@@ -55,6 +58,9 @@ class CreateStore extends Component
 
     public function createStore()
     {
+
+
+
         $this->validate();
 
         $this->dispatchBrowserEvent('first-form');
@@ -93,15 +99,26 @@ class CreateStore extends Component
         }
 
         $this->dispatchBrowserEvent('show-alert');
-        return redirect()->route('backEnd.index')->with(['success','Store Created Successful']);
+        return redirect()->route('backEnd.dashboard')->with(['success','Store Created Successful']);
 
     }
 
-    public function updated(): void
+
+
+    public function updated()
     {
+        if (count($this->bannerUpload) >= 2) {
+            $this->bannerStatus = true;
+            session()->flash('disableFileUpload','Maximum Amount Of Images Reached');
+        }
+
         $this->validate();
 
+//        dd(count($this->bannerUpload));
+
     }
+
+
 
     public function mount(): void
     {

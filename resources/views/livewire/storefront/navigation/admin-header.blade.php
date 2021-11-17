@@ -73,8 +73,15 @@
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
                 <a href="#"
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
-                <a href=""
-                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+                   <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">
+                        {{ __('Log Out') }}
+                    </x-dropdown-link>
+                </form>
             </div>
         </div>
     </div>

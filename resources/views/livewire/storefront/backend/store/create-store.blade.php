@@ -200,13 +200,25 @@
 
                 <div class="lg:col-span-2 md:col-span-1 col-span-1 overflow-y-scroll h-52 ">
 
+{{--                        {{count($bannerUpload)}}--}}
+
+{{--                        {{($bannerStatus)}}--}}
                     <x-input.label label="Photo" for="bannerUpload">
 
-                        <x-input.filepond wire:model="bannerUpload"
+                        <x-input.filepond :disabled="$bannerStatus" wire:model="bannerUpload"
                                           multiple/>
 
                         <div>
+
+                            @if (session()->has('disableFileUpload'))
+                                <span class="text-red-500 text-xs italic  m-1">
+                                {{session('disableFileUpload')}}
+                                </span>
+                            @endif
+
+
                             @if($errors->first('bannerUpload'))
+
 
                                 <span class="text-red-500 text-xs italic  m-1">
 
@@ -219,7 +231,9 @@
 
                     </x-input.label>
 
+
                 </div>
+
 
             </div>
 
