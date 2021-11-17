@@ -27,4 +27,9 @@ class Inbox extends Model
         'message',
         'is_seen'
     ];
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -101,4 +101,9 @@ class User extends Authenticatable
         return $this->hasMany(SessionLog::class);
     }
 
+    public function inbox(): HasMany
+    {
+        return $this->hasMany(SessionLog::class);
+    }
+
 }

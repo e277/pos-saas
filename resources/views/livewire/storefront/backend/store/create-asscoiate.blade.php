@@ -42,7 +42,7 @@
 {{--            </div>--}}
 {{--        </div>--}}
 {{--    </div>--}}
-    <div class=" sm:mx-auto lg:mx-32 fixed top-0 left-0 w-full h-full bg-black bg-opacity-75
+    <div class=" z-50 sm:mx-auto lg:mx-32 fixed top-0 left-0 w-full h-full bg-black bg-opacity-75
                 flex items-center shadow-lg overflow-y-auto"
          x-show="isOpen"
     >
@@ -133,5 +133,41 @@
         </section>
 
     </div>
+
+
+
+
+
+<!-- TABLE -->
+    <table class="min-w-full border-collapse block md:table mt-2 z-0">
+        <thead class="block md:table-header-group z-0">
+        <tr class=" z-0 border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto  md:relative ">
+            <th class=" bg-indigo-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Name</th>
+{{--            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Last Name</th>--}}
+            <th class="bg-indigo-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Email Address</th>
+{{--            <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Mobile</th>--}}
+            <th class="bg-indigo-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Actions</th>
+        </tr>
+        </thead>
+        <tbody class="block md:table-row-group">
+
+        @foreach($associates as $key => $associate)
+            <tr class="bg-white border border-grey-500 md:border-none block md:table-row">
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Name</span>{{$associate['name']}}</td>
+{{--                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Last Name</span>maribelkoch</td>--}}
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Email Address</span>{{$associate['email']}}</td>
+{{--                            <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Mobile</span>582-400-3X36</td>--}}
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                    <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded" >Edit</button>
+                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded" wire:click="delete({{$associate['id']}})">Delete</button>
+                </td>
+            </tr>
+        @endforeach
+
+
+        </tbody>
+    </table>
+
 
 </div>
