@@ -88,7 +88,8 @@
 
             </x-links.merchantNavi>
 
-            <x-links.merchantNavi>
+            <x-links.merchantNavi :href="route('backend.productsview')"
+                                  :active="request()->routeIs('backend.productsview')">
 
                 <x-slot name="icon">
 

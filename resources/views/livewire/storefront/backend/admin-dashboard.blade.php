@@ -107,17 +107,7 @@
 
             </x-slot>
 
-            <x-table.row class="text-center">
-
-                <x-table.cell> Testing Store</x-table.cell>
-                <x-table.cell > Fan</x-table.cell>
-                <x-table.cell> Gucci</x-table.cell>
-                <x-table.cell> Red label</x-table.cell>
-                <x-table.cell > 20</x-table.cell>
-                <x-table.cell> 2500.00</x-table.cell>
-                <x-table.cell> 1500.00</x-table.cell>
-
-            </x-table.row>
+            
 
         </x-table>
 
