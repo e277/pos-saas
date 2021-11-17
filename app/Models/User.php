@@ -50,6 +50,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Query\Builder|User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|User withoutTrashed()
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\SessionLog[] $inbox
+ * @property-read int|null $inbox_count
  */
 class User extends Authenticatable
 {
@@ -89,6 +91,11 @@ class User extends Authenticatable
     public function store(): HasMany
     {
         return $this->hasMany(Store::class);
+    }
+
+    public function customer(): hasOne
+    {
+        return $this->hasOne(Customer::class);
     }
 
     public function salesAssociate(): HasOne

@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Contact whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Contact whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @method static \Database\Factories\ContactFactory factory(...$parameters)
  */
 class Contact extends Model
 {

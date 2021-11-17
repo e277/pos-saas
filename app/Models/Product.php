@@ -59,6 +59,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Product withTrashed()
  * @method static Builder|Product withoutTrashed()
  * @mixin Eloquent
+ * @property-read Collection|\App\Models\Invoice[] $invoice
+ * @property-read int|null $invoice_count
  */
 class Product extends Model
 {
@@ -92,7 +94,7 @@ class Product extends Model
         return $this->belongsTo(Store::class);
     }
 
-    public function invoice(){
+    public function invoices(){
         return $this->hasMany(Invoice::class);
     }
 }

@@ -24,7 +24,6 @@ class StoreSeeder extends Seeder
                 'banner_message'=>'Store 1',
                 'slogan'=>'Store 1',
                 'mission'=>' Store 1',
-                'theme'=>' Store 1',
                 'desc'=>'Store 1',
                 'theme'=>'Store 1',
                 'logo_path'=>'Store 1 logo'
@@ -38,7 +37,6 @@ class StoreSeeder extends Seeder
                 'banner_message'=>'Store 2',
                 'slogan'=>'Store 2',
                 'mission'=>'Store 2',
-                'theme'=>'Store 2',
                 'desc'=>'Store 2',
                 'theme'=>'Store 2',
                 'logo_path'=>'Store 2 logo'
@@ -52,7 +50,6 @@ class StoreSeeder extends Seeder
                 'banner_message'=>'Store 3',
                 'slogan'=>'Store 3',
                 'mission'=>'Store 3',
-                'theme'=>'Store 3',
                 'desc'=>'Store 3',
                 'theme'=>'Store 3',
                 'logo_path'=>'Store 3 logo'
@@ -66,7 +63,6 @@ class StoreSeeder extends Seeder
                 'banner_message'=>'Store 4',
                 'slogan'=>'Store 4',
                 'mission'=>'Store 4',
-                'theme'=>'Store 4',
                 'desc'=>'Store 4',
                 'theme'=>'Store 4',
                 'logo_path'=>'Store 4 logo'

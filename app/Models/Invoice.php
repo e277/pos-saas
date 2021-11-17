@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Invoice whereSaleId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Invoice whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $product_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Invoice whereProductId($value)
  */
 class Invoice extends Model
 {
@@ -36,8 +38,9 @@ class Invoice extends Model
 
     protected $fillable = [
         'sales_id',
-        'project_id',
-        'invoice_nbr'
+        'product_id',
+        'invoice_nbr',
+        'date'
     ];
 
     public function sales(){

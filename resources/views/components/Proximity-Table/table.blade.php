@@ -26,15 +26,14 @@
                 <table class="min-w-full leading-normal">
 
                     <thead>
-                    <x-table.table-row>
+                    <x-Proximity-Table.table-row>
                         {{$thead}}
-                    </x-table.table-row>
-
+                    </x-Proximity-Table.table-row>
 
                     </thead>
 
                     <tbody>
-                        {{$tbody}}
+                    {{$tbody}}
                     </tbody>
                 </table>
             </div>
