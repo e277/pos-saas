@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Storefront\Backend;
 
 use Livewire\Component;
+use App\Models\Inbox;
 
 class Adminindox extends Component
 {
