@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Product;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Store;
 use Livewire\Component;
 
 class CreateProduct extends Component
@@ -30,11 +31,11 @@ class CreateProduct extends Component
         $this->product = new Product();
     }
 
-    public function storeProduct($storeId): void
+    public function storeProduct(): void
     {
         $this->validate();
-        $this->student->save();
-        $this->reset();
+        $this->product->save();
+        $this->product = new Product();
         session()->flash('success', 'Product has been successfully created');
     }
 
@@ -43,6 +44,7 @@ class CreateProduct extends Component
         return view('livewire.product.create-product', [
             'brands' => Brand::all(),
             'categories' => Category::all(),
+            'stores' => Store::where('user_id', auth()->user()->id)->get(),
         ])->extends('layouts.storeBackend');
     }
 }
