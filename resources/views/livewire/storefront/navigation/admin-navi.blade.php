@@ -31,7 +31,7 @@
 
         </x-links.merchantNavi>
 
-        <x-dropdown title="Manage Store">
+        <x-dropdown2 title="Manage Store">
 
             <x-links.merchantNavi :href="route('backEnd.createStore')"
                                   :active="request()->routeIs('backEnd.createStore')">
@@ -72,9 +72,9 @@
 
             </x-links.merchantNavi>
 
-        </x-dropdown>
+        </x-dropdown2>
 
-        <x-dropdown title="Products">
+        <x-dropdown2 title="Products">
 
             <x-links.merchantNavi>
 
@@ -100,7 +100,7 @@
 
             </x-links.merchantNavi>
 
-        </x-dropdown>
+        </x-dropdown2>
 
         <x-links.merchantNavi>
 
