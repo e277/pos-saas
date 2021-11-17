@@ -15,8 +15,8 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("sale_id")->constrained();
-            $table->foreignId("product_id")->constrained();
+            $table->foreignId("sale_id")->constrained('sales');
+            $table->foreignId("product_id")->constrained('products');
             $table->string("invoice_nbr");
             $table->date("date")->useCurrent();
             $table->timestamps();
