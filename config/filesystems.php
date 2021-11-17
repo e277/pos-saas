@@ -42,6 +42,22 @@ return [
             'visibility' => 'public',
         ],
 
+        'storeLogo' => [
+            'driver' => 'local',
+            'root' => storage_path('app/storeLogo'),
+            'url' => env('APP_URL').'/storeLogo',
+            'visibility' => 'public',
+        ],
+
+        'bannerImages' => [
+            'driver' => 'local',
+            'root' => storage_path('app/bannerImages'),
+            'url' => env('APP_URL').'/bannerImages',
+            'visibility' => 'public',
+        ],
+
+
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -67,7 +83,7 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('bannerImages') => storage_path('app/bannerImages'),
     ],
 
 ];

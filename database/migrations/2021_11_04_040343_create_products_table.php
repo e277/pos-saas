@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->integer("weight");
             $table->double("price");
-            $table->double("sale_price");
+            $table->double("sale_price")->nullable();
             $table->string("sku")->nullable();
             $table->string("image_path")->nullable();
             $table->integer("qty");

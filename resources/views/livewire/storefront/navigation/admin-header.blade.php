@@ -19,7 +19,7 @@
 
         <div>
 
-            <a href="{{ route('backEnd.inbox') }}"
+            <a href="{{ route('pos') }}"
                class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
 
                 <span class="mr-2"><i class="fab fa-windows text-2xl"></i> POS System </span>
@@ -32,7 +32,7 @@
 
             <div>
 
-                <a href="{{ route('backEnd.inbox') }}"
+                <a href="{{ route('backend.inbox') }}"
                    class="flex mx-4 mt-1 text-gray-600 focus:outline-none">
 
                     <span class="mr-4">
@@ -55,10 +55,11 @@
 
         <div x-data="{ dropdownOpen: false }" class="relative">
             <button @click="dropdownOpen = ! dropdownOpen"
-                    class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
-                <img class="h-full w-full object-cover"
-                     src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
-                     alt="Your avatar">
+                    class="relative block h-8 w-8 rounded-full overflow-hidden focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
             </button>
 
             <div x-show="dropdownOpen" @click="dropdownOpen = false"
@@ -68,7 +69,7 @@
             <div x-show="dropdownOpen"
                  class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
                  style="display: none;">
-                <a href="#"
+                <a href="{{route('backend.profile')}}"
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
                 <a href="#"
                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
