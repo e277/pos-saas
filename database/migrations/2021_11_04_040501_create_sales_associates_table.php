@@ -15,7 +15,7 @@ class CreateSalesAssociatesTable extends Migration
     {
         Schema::create('sales_associates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("user_id");
+            $table->foreignId("user_id")->constrained('users');
             $table->integer("hours");
             $table->timestamps();
         });
