@@ -10,7 +10,7 @@
                         <h1>Select Product</h1>
 
                         <div class="relative text-gray-600">
-                            <input type="search" wire:keydown.lazy="search($event.target.value)" placeholder="Search"
+                            <input type="search" wire:model="search" placeholder="Search"
                                 class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
                             <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
                                 <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
@@ -43,12 +43,12 @@
                                 <x-table.table-row>
                                     <x-table.table-data responsiveName="Product Name">{{$product->name}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Quantity"><input class="w-5/12 h-8"
-                                            type="number" max="{{$product->qty}}"></x-table.table-data>
+                                            type="number" wire:model.lazy="itemQty.{{$product->id}}" max="{{$product->qty}}"></x-table.table-data>
                                     <x-table.table-data responsiveName="Price">{{ '$'.number_format($product->price, 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Discount">{{ '$'.number_format(($product->sale_price ? $product->sale_price - $product->price : null), 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Total">{{ '$'.number_format($product->sale_price ?? $product->price, 2, '.', ',')}}</x-table.table-data>
                                     <x-table.table-data responsiveName="Action">
-                                        <x-table.button color="gray" class="w-24 h-18 font-bold" >Select</x-table.button>
+                                        <x-table.button color="gray" class="w-24 h-18 font-bold" wire:click="addItem($event.target.value)" value="{{$product->id}}">Select</x-table.button>
                                     </x-table.table-data>
 
                                     </x-table.table-row>
@@ -57,6 +57,8 @@
                             </x-table.tbody>
                         </x-table.table>
                     </div>
+
+                    {!! $msg !!}
 
                    <div class="flex justify-center space-x-2 mt-8 px-5">
                     <x-table.button color="indigo" class="w-32 h-24 font-bold">
@@ -101,14 +103,17 @@
                                 <th class="py-2">Total</th>
                             </tr>
                     
-                            @for($y=0; $y<5; $y++) <tr>
-                                <td class="py-2">Cocoa Bread</td>
-                                <td class="py-2">5</td>
-                                <td class="py-2">Weat Bread</td>
-                                <td class="py-2">$50</td>
-                                <td class="py-2">$250</td>
-                                </tr>
-                                @endfor
+                            @foreach ($cartItems as $item)
+                            <tr>
+                                <td class="py-2">{{$item->product->name}}</td>
+                                <td class="py-2">{{$item->qty}}</td>
+                                <td class="py-2">{{$item->product->desc}}</td>
+                                <td class="py-2">{{response()->currency($item->product->price)}}</td>
+                                <td class="py-2">{{response()->currency(($item->product->price * $item->qty))}}</td>
+                            </tr>
+                            @endforeach
+                           
+                              
                         </table>
                     </div>
 
