@@ -1,5 +1,7 @@
 @props([
-    'error' => false
+    'error' => false,
+    'disabled' => false
+
 ])
 
 
@@ -22,7 +24,7 @@
         });
         FilePond.create($refs.input);
     ">
-    <input type="file" x-ref="input">
+    <input @if($disabled) disabled="disabled" @endif  type="file" x-ref="input">
 
     @if($error)
 

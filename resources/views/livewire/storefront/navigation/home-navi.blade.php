@@ -147,7 +147,7 @@
 
                         <a href="{{ route('login') }}"
 
-                           class="text-sm text-gray-700 dark:text-gray-500 underline px-6 hover:text-purple-600">Log in</a>
+                           class="text-sm text-gray-800 dark:text-gray-500 underline px-6 hover:text-purple-600">Log in</a>
 
 
 
@@ -155,7 +155,7 @@
 
                             <a href="{{ route('register') }}"
 
-                               class="text-sm text-gray-700 dark:text-gray-500 underline px-6 hover:text-purple-600">Register</a>
+                               class="text-sm text-gray-800 dark:text-gray-500 underline px-6 hover:text-purple-600">Register</a>
 
                         @endif
 

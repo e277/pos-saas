@@ -19,7 +19,7 @@
     <nav class="mt-10 space-y-2">
 
 
-        <x-links.merchantNavi :href="route('backEnd.dashboard')" :active="request()->routeIs('backEnd.dashboard')">
+        <x-links.merchantNavi :href="route('backend.dashboard')" :active="request()->routeIs('backend.dashboard')">
 
             <x-slot name="icon">
 
@@ -33,8 +33,8 @@
 
         <x-dropdown2 title="Manage Store">
 
-            <x-links.merchantNavi :href="route('backEnd.createStore')"
-                                  :active="request()->routeIs('backEnd.createStore')">
+            <x-links.merchantNavi :href="route('backend.createStore')"
+                                  :active="request()->routeIs('backend.createStore')">
 
                 <x-slot name="icon">
 
@@ -46,8 +46,8 @@
 
             </x-links.merchantNavi>
 
-            <x-links.merchantNavi :href="route('backEnd.createAssociate')"
-                                  :active="request()->routeIs('backEnd.createAssociate')">
+            <x-links.merchantNavi :href="route('backend.createAssociate')"
+                                  :active="request()->routeIs('backend.createAssociate')">
 
                 <x-slot name="icon">
 
@@ -59,8 +59,8 @@
 
             </x-links.merchantNavi>
 
-            <x-links.merchantNavi :href="route('backEnd.viewDetails')"
-                                  :active="request()->routeIs('backEnd.viewDetails')">
+            <x-links.merchantNavi :href="route('backend.viewDetails')"
+                                  :active="request()->routeIs('backend.viewDetails')">
 
                 <x-slot name="icon">
 
@@ -76,7 +76,8 @@
 
         <x-dropdown2 title="Products">
 
-            <x-links.merchantNavi>
+            <x-links.merchantNavi :href="route('product.create')"
+                                  :active="request()->routeIs('product.create')">
 
                 <x-slot name="icon">
 
@@ -102,7 +103,8 @@
 
         </x-dropdown2>
 
-        <x-links.merchantNavi>
+        <x-links.merchantNavi :href="route('backend.SalesReport')"
+                              :active="request()->routeIs('backend.SalesReport')">
 
             <x-slot name="icon">
 

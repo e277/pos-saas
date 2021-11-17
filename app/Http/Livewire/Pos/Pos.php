@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Pos;
 
 use App\Models\Product;
+use App\Models\User;
 use Livewire\Component;
 
 class Pos extends Component
@@ -16,8 +17,5 @@ class Pos extends Component
     {
         return view('livewire.pos.pos');
     }
-
-     
-
-    
+ 
 }
